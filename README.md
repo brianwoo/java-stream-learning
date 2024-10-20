@@ -71,7 +71,10 @@ Stream.generate(Math::random)
 
 ### iterate
 ```jsx
-// Here, we pass 2 as the seed value, which becomes the first element of our stream. This value is passed as input to the lambda, which returns 4. This value, in turn, is passed as input in the next iteration.
+// Here, we pass 2 as the seed value, which becomes the first element 
+// of our stream. This value is passed as input to the lambda, which 
+// returns 4. This value, in turn, is passed as input in the next 
+// iteration.
 Stream<Integer> evenNumStream = Stream.iterate(2, i -> i * 2);
 
 List<Integer> collect = evenNumStream
@@ -216,7 +219,9 @@ assertEquals(salIncrOverhead, 60000.0, 0);
 ## collect + groupingBy + reducing
 
 ```jsx
-// Here, we group the employees based on the initial character of their first name. Within each group, we find the employee with the longest name.
+// Here, we group the employees based on the initial character of 
+// their first name. Within each group, we find the employee with the 
+// longest name.
 
 Comparator<Employee> byNameLength = Comparator.comparing(Employee::getName);
     
@@ -374,7 +379,10 @@ Double sumSal = empList.stream()
 - takeWhile *can* potentially be a more efficient way to *filter*
 
 ```jsx
-// While both examples yield the same result in this scenario, the difference lies in how takeWhile operates. It stops processing as soon as the predicate is false, whereas filter evaluates the entire stream
+// While both examples yield the same result in this scenario, the 
+// difference lies in how takeWhile operates. It stops processing as 
+// soon as the predicate is false, whereas filter evaluates the entire 
+// stream
 Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
       .takeWhile(x -> x <= 5)
       .forEach(System.out::println);
